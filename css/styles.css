@@ -2,12 +2,22 @@ html, body {
     height: 100%;
     width: 100%;
     margin: 0;
+    background: #cc2b5e; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cc2b5e, #753a88); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cc2b5e, #753a88);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 
 .main {
     position: relative;
     height: 100%;
     width: 100%;
+}
+
+.location-box {
+    padding: 20px;
+    font-size: 20px;
 }
 
 .current {
@@ -17,10 +27,13 @@ html, body {
     margin-left: auto; 
     margin-right: auto; 
     width: 50%;
+    top: 15%;
 }
 
-#date {
+.current-time {
     font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .weather {
@@ -29,6 +42,7 @@ html, body {
     display: flex;
     font-size: 200px;
     align-items: center;
+    justify-content: center;
 }
 
 #weather-icon {
@@ -53,7 +67,29 @@ html, body {
 }
 
 .next-day {
-    border: 1px solid black;
+    box-shadow: 0px 10px -14px 14px #FFF;
+    -webkit-box-shadow: 0px 10px -14px 14px #FFF;
+    -moz-box-shadow: 0px 10px -14px 14px rgb(255, 255, 255);
     width: 48%;
     margin: 2%;
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.future-date {
+    font-size: 18px;
+}
+
+.future-temp {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+#temp-range {
+    font-size: 20px;
+    position: absolute;
+    left: 15%;
 }
