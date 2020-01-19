@@ -13,10 +13,31 @@
 </head>
 
 <body>
-  <div id="today">
-    <div id="location"></div>
-    <div id="temp"></div>
-    <div id="weather-icon"></div>
+  <div class="main">
+    
+    <div class="location-box">
+      <div id="location"></div>
+    </div>
+
+    <div class="current">
+      <div id="date"></div>
+      <div class="weather">
+        <div id="temp"></div>
+        <div id="weather-icon"></div>
+      </div>
+    </div>
+
+    <div id="future">
+      <div class="row">
+        <div class="next-day" id="day-2"></div>
+        <div class="next-day" id="day-3"></div>
+      </div>
+      <div class="row">
+        <div class="next-day" id="day-4"></div>
+        <div class="next-day" id="day-5"></div>
+      </div>
+  
+    </div>
   </div>
   <script src="js/index.js"></script>
 </body>

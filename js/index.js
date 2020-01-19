@@ -4,9 +4,10 @@ function getForecast(){
   .then(res => {
     console.log(res)
     document.querySelector("#location").innerHTML = res.city.name + ", " + res.city.country
-    const currentWeather = res.list[0]
-    document.querySelector("#temp").innerHTML = Math.round(currentWeather.main.temp)
-    document.querySelector("#weather-icon").style.background = `url(http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png)`
+    const current = res.list[0]
+    document.querySelector("#date").innerHTML = new Date(current.dt).getDate()
+    document.querySelector("#temp").innerHTML = Math.round(current.main.temp).toString() + "°C"
+    document.querySelector("#weather-icon").style.background = `url(http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png)`
   })
 }
 
