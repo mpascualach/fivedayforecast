@@ -1,7 +1,13 @@
 function getForecast(){
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=London,us&mode=json&APPID=3770fea2917ae59552bbb9c80481c230')
+  fetch('https://api.openweathermap.org/data/2.5/forecast?q=Berlin&units=metric&mode=json&APPID=3770fea2917ae59552bbb9c80481c230')
   .then(response => response.json())
-  .then(res => console.log(res))
+  .then(res => {
+    console.log(res)
+    document.querySelector("#location").innerHTML = res.city.name + ", " + res.city.country
+    const currentWeather = res.list[0]
+    document.querySelector("#temp").innerHTML = Math.round(currentWeather.main.temp)
+    document.querySelector("#weather-icon").style.background = `url(http://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png)`
+  })
 }
 
 getForecast()
